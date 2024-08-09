@@ -4,7 +4,10 @@ import plotly.express as px
 import random
 import functions as func
 import main_analysis as main
+import os
+file_path = os.path.join(os.path.dirname(__file__), 'df2021.csv')
 
+df2021 = pd.read_csv(file_path)
 #######################################
 # DATA LOADING
 #######################################
