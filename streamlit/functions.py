@@ -46,7 +46,7 @@ def plot_bar_plotly(df, column_name, top_n=10, height=450, width=700):
     fig.update_layout(xaxis_title=column_name, yaxis_title='Number of Developers')
     fig.update_layout(height=height, width=width)
 
-    return st.plotly_chart(fig)
+    return st.plotly_chart(fig, key="unique_key_1")
 
 
 def plot_pie_plotly(df, column_name,top_n=10,  height=400, width=400 ):
