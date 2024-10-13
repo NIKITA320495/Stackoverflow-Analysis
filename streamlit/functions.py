@@ -35,7 +35,7 @@ def plot_boxplot(data, x, y, title):
 
 #########################################################################    
 
-def plot_bar_plotly(df, column_name, top_n=10, height=450, width=700, key_suffix=None):
+def plot_bar_plotly(df, column_name, top_n=10, height=450, width=700):
     df_counts = df[column_name].value_counts().head(top_n).reset_index()
     df_counts.columns = [column_name, 'Count']
     
@@ -46,8 +46,10 @@ def plot_bar_plotly(df, column_name, top_n=10, height=450, width=700, key_suffix
     fig.update_layout(xaxis_title=column_name, yaxis_title='Number of Developers')
     fig.update_layout(height=height, width=width)
 
-    # Generate a dynamic key using key_suffix to ensure uniqueness
-    unique_key = f"{column_name}_{key_suffix}" if key_suffix else column_name
+    # Generate a random number to create a unique key
+    random_suffix = random.randint(1000, 9999)
+    unique_key = f"{column_name}_{random_suffix}"
+
     return st.plotly_chart(fig, key=unique_key)
 
 
