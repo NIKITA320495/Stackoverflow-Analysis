@@ -47,7 +47,7 @@ def plot_bar_plotly(df, column_name, top_n=10, height=450, width=700):
     fig.update_layout(height=height, width=width)
 
     # Use column_name to create a unique key
-    return st.plotly_chart(fig, key=f"plot_{column_name}")
+    return st.plotly_chart(fig, key=f"{column_name}")
 
 
 
